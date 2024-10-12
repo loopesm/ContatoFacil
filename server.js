@@ -7,8 +7,9 @@ const cookieParser = require('cookie-parser');
 const csurf = require('csurf');
 
 mongoose
-  .connect(process.env.CONNECTIONSTRING)
+  .connect(process.env.MONGO_URL)
   .then(() => {
+    console.log("Conectado ao MongoDB");
     app.emit("Conectado");
   })
   .catch((e) => console.log(e));
@@ -29,7 +30,7 @@ const mySecretKeySession = process.env.sessionSecret
 
 const sessionOptions = session({
   secret: mySecretKeySession,
-  store: new MongoStore({ mongoUrl: process.env.CONNECTIONSTRING }),
+  store: new MongoStore({ mongoUrl: process.env.MONGO_URL }),
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -68,7 +69,7 @@ app.use(erroServidor);
 app.use(routes);
 
 app.on("Conectado", () => {
-  app.listen(3000, () => {
+  app.listen(4545, () => {
     console.log("Acessar http://localhost:3000");
     console.log("Servidor executando na porta 3000");
   });

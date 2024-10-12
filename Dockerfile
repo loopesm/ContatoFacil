@@ -1,7 +1,10 @@
-FROM node:22-alpine
-WORKDIR /usr/src/app
+FROM node:lts-alpine
+WORKDIR /app
 COPY package*.json ./
-RUN npm i
+RUN npm install
+RUN addgroup dev && adduser -S -G dev moises
+USER moises
+COPY ./.env ./.env
 COPY . .
-EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD ["node", "server.js"]
+EXPOSE 4545

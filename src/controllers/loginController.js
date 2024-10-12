@@ -46,7 +46,7 @@ exports.register = async (req, res) => {
       req.flash('errorsRegister', login.errorsRegister)
       req.session.save(function(){
       //res.redirect('back')
-      res.location('/');
+      res.location('/contato-facil');
       res.status(302).send();
       return
       })
@@ -56,7 +56,7 @@ exports.register = async (req, res) => {
       req.flash('successRegister', 'Seu usuário foi criado com sucesso!')
       req.session.save(function(){
       //res.redirect('back')
-      res.location('/');
+      res.location('/contato-facil');
       res.status(302).send();
       return
       })
@@ -78,7 +78,7 @@ exports.login = async (req, res) => {
       req.flash('errorsLogin', login.errorsLogin)
       req.session.save(function(){
       //res.redirect('back')
-      res.location('/');
+      res.location('/contato-facil');
       res.status(302).send();
       return
       })
@@ -89,7 +89,7 @@ exports.login = async (req, res) => {
       req.session.user = login.user
       req.session.save(function(){
       //res.redirect('back')
-      res.location('/login/logado');
+      res.location('contato-facil/login/logado');
       res.status(302).send();
       return
       })
@@ -103,7 +103,7 @@ exports.login = async (req, res) => {
 
 exports.logout = function(req,res) {
   req.session.destroy()
-  res.location('/');
+  res.location('/contato-facil');
   res.status(302).send();
   return
 }

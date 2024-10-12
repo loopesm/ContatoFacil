@@ -30,7 +30,7 @@ exports.register = async (req, res) => {
   
     req.flash("successContatos", "Contato criado com sucesso!");
     req.session.save(function () {
-      res.redirect(`/contato/index/${contatos.contatos._id}`);
+      res.redirect(`/contato-facil/contato/index/${contatos.contatos._id}`);
       return
     });
   
@@ -73,7 +73,7 @@ exports.edit = async (req,res) => {
     }
     req.flash("successContatos", "Contato editado com sucesso!");
     req.session.save(function () {
-    res.redirect(`/contato/index/${contatos.contatos._id}`);
+    res.redirect(`/contato-facil/contato/index/${contatos.contatos._id}`);
     });
     return
     
@@ -91,7 +91,7 @@ exports.delete = async (req, res) => {
     await contatos.delete(req.params.id);
     req.flash("successContatos", "Contato deletado com sucesso!");
     req.session.save(function () {
-      res.redirect("/");
+      res.redirect("/contato-facil");
       return
     });
   } catch (error) {

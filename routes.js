@@ -8,7 +8,6 @@ const { erroServidor } = require("./src/middlewares/middleware");
 
 // ROTAS LOGIN
 route.get("/contato-facil", loginController.index);
-// route.get("/login/index", loginController.login)
 route.post("/contato-facil/login/register", loginController.register);
 route.post("/contato-facil/login/login", loginController.login);
 route.get("/contato-facil/login/logado", loginController.index);

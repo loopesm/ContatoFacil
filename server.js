@@ -70,7 +70,7 @@ app.use(routes);
 
 app.on("Conectado", () => {
   app.listen(4545, () => {
-    console.log("Acessar http://localhost:3000");
-    console.log("Servidor executando na porta 3000");
+    console.log("Acessar http://localhost:4545/contato-facil");
+    console.log("Servidor executando na porta 4545");
   });
 });

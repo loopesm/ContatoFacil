@@ -14,7 +14,7 @@
 
         <div class="col-lg border border-primary rounded p-4 m-1">
           <h4 class="text-center mb-3">Acesse sua conta:</h4>
-          <form action="/login/login" method="POST">
+          <form action="/contato-facil/login/login" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="mb-3">
               <label for="email-login" class="form-label">E-mail:</label>
@@ -44,7 +44,7 @@
         <div class="col-lg border border-primary rounded p-4 m-1">
           <h4 class="text-center mb-3">Faça seu Cadastro aqui:</h4>
 
-          <form action="/login/register" method="POST">
+          <form action="/contato-facil/login/register" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="form-group mb-3">
               <label for="name" class="form-label">Seu Nome:</label>

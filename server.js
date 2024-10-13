@@ -66,7 +66,7 @@ app.use(middlewareGlobal);
 app.use(checkCsrError)
 app.use(csrfMiddleware)
 app.use(erroServidor);
-app.use(routes);
+app.use('/contato-facil', routes);
 
 app.on("Conectado", () => {
   app.listen(4545, () => {

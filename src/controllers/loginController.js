@@ -89,7 +89,7 @@ exports.login = async (req, res) => {
       req.session.user = login.user
       req.session.save(function(){
       //res.redirect('back')
-      res.location('contato-facil/login/logado');
+      res.location('/contato-facil/login/logado');
       res.status(302).send();
       return
       })

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM node:20-alpine
+=======
+FROM node:lts-alpine
+>>>>>>> 6c7c173 (Criação da Imagem no DockerHub)
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
